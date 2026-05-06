@@ -4,83 +4,26 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: WNS Holdings
 providerId: wns-holdings
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Business Process Outsourcing
   - Analytics
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the WNS Holdings API surface. Captures per-tier
-  quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to
-  be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
-responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
+description: WNS (Holdings) Ltd. does not publish a public API or rate-limit documentation. Any API rate limits applicable to a WNS-delivered solution are governed by the master services agreement signed with WNS, not by a public throttling policy.
+sources:
+  - https://www.wns.com/contact-us
+notes: No public rate-limit documentation exists. Scaffolded numeric tiers (free/professional/enterprise per-minute and per-month limits) have been removed to avoid fabricated values; a single contract-scoped placeholder is retained.
+responseCodes: {}
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - WNS Holdings API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - WNS Holdings API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - WNS Holdings API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - WNS Holdings API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
+  - name: Contract-Scoped Rate Limits
     scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - WNS Holdings API
+    metric: varies
+    limit: defined per WNS master services agreement; not publicly documented
+    notes: Throughput, concurrency, and quotas are negotiated as part of the engagement and surfaced in the contractual SLA rather than on a public limits page.
 policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+  - name: Contractual Governance
+    description: Throttling, fair-use, and recovery rules are governed by the WNS master services agreement; clients should refer to their engagement contract and account team for operational limits.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
