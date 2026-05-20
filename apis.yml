@@ -26,6 +26,8 @@ apis:
     description: >-
       The WNS Holdings API provides access to platform services and data for enterprise integration and automation.
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/wns-holdings
   - type: Website
     url: https://www.wns.com
 maintainers:
