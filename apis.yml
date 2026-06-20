@@ -2,7 +2,7 @@ aid: wns-holdings
 url: https://raw.githubusercontent.com/api-evangelist/wns-holdings/refs/heads/main/apis.yml
 name: WNS Holdings
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Business Process Outsourcing
   - Analytics
@@ -17,7 +17,7 @@ apis:
     tags:
       - Business Process Outsourcing
       - Analytics
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.wns.com
     humanURL: https://developer.wns.com
     properties:
