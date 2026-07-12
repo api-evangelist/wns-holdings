@@ -1,0 +1,21 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.wns.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Feb  6 09:22:01 2027 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: developer.wns.com
+  https: false
+- host: api.wns.com
+  https: false
+domains:
+- domain: wns.com
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
