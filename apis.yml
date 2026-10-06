@@ -32,7 +32,7 @@ tags:
 description: >-
   WNS Holdings is a major US corporation and Fortune 1000 company. The WNS Holdings API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
 created: '2026-04-19'
-modified: '2026-04-19'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
   - aid: wns-holdings:wns-holdings-api
@@ -49,6 +49,8 @@ apis:
     description: >-
       The WNS Holdings API provides access to platform services and data for enterprise integration and automation.
 common:
+  - url: https://www.wns.com/about-us/newsroom
+    type: Blog
   - type: DomainSecurity
     url: security/wns-holdings-domain-security.yml
   - type: LinkedIn
